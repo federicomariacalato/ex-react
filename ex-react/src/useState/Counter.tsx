@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 type CounterProps = {
@@ -8,6 +8,10 @@ type CounterProps = {
 
 export function Counter({ initialValue, incrementAmount }: CounterProps) {
   const [counter, setCounter] = useState(initialValue);
+  useEffect(() => {
+    console.log({ counter });
+  }, [counter]);
+
   function incrementCounter() {
     setCounter((n) => n + incrementAmount);
     // Passando una funzione callback (es. `n => n + 1`), React ci garantisce che il parametro
