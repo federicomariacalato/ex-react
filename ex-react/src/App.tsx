@@ -1,9 +1,10 @@
+import { UncontrolledLogin } from "./form/UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
 export function App() {
   return (
     <div>
-      <Welcome name="John" age={25} />
+      <UncontrolledLogin />
     </div>
   );
 }
