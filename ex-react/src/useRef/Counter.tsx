@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { CounterDisplay } from "./CounterDisplay";
+import { CounterDisplay } from "../useState/CounterDisplay";
 
 type CounterProps = {
   initialValue: number;
