@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 type CounterProps = {
@@ -8,8 +8,19 @@ type CounterProps = {
 
 export function Counter({ initialValue, incrementAmount }: CounterProps) {
   const [counter, setCounter] = useState(initialValue);
+
+  const directionRef = useRef("");
+
   useEffect(() => {
-    console.log({ counter });
+    let currentDirection =
+      counter > initialValue ? "up" : counter < initialValue ? "down" : "";
+
+    if (currentDirection !== directionRef.current) {
+      console.log(currentDirection);
+    }
+    directionRef.current = currentDirection;
+
+    // console.log({ counter });
   }, [counter]);
 
   function incrementCounter() {
