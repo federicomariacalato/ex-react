@@ -5,6 +5,9 @@ import { UncontrolledLogin } from "./form/UncontrolledLogin";
 import { FocusableInput, MountedTracker } from "./useRef/FocusableInput";
 import { Welcome } from "./Welcome";
 import { Counter } from "./useRef/Counter";
+import { Colors } from "./liste/Colors";
+
+const ColorsName = [{ name: "giallo", id: 1 }];
 
 export function App() {
   return (
@@ -20,6 +23,9 @@ export function App() {
       </div>
       <div>
         <Counter initialValue={0} incrementAmount={1} />
+      </div>
+      <div>
+        <Colors items={ColorsName} />
       </div>
     </StrictMode>
   );
