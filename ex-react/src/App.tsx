@@ -6,7 +6,7 @@ import { FocusableInput, MountedTracker } from "./useRef/FocusableInput";
 import { Welcome } from "./Welcome";
 import { Counter } from "./useRef/Counter";
 import { Colors } from "./liste/Colors";
-import { TodoList } from "./liste&stato/TodoList";
+import { TodoList } from "./listeEStato/TodoList";
 
 const ColorsName = [{ name: "giallo", id: 1 }];
 
