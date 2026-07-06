@@ -7,13 +7,16 @@ import { Welcome } from "./Welcome";
 import { Counter } from "./useRef/Counter";
 import { Colors } from "./liste/Colors";
 import { TodoList } from "./listeEStato/TodoList";
+import { GithubUser } from "./fetch/GithubUser";
+import { GithubUsers } from "./fetch/GithubUsers";
 
+const programmatori = ["marcolink", "gaearon", "yyx990803"];
 const ColorsName = [{ name: "giallo", id: 1 }];
 
 export function App() {
   return (
     <StrictMode>
-      <div>
+      {/* <div>
         <InteractiveWelcome />
       </div>
       <div>
@@ -30,6 +33,9 @@ export function App() {
       </div>
       <div>
         <TodoList />
+      </div> */}
+      <div>
+        <GithubUsers usernames={programmatori} />
       </div>
     </StrictMode>
   );
