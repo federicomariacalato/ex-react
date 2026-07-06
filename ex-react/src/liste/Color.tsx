@@ -4,5 +4,5 @@ type Items = {
 };
 
 export function Color({ id, name }: Items) {
-  return <li key={id}>{name}</li>;
+  return <li>{name}</li>;
 }
