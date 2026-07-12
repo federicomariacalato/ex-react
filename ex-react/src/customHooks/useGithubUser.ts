@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export type User = {
   id: number;
@@ -7,35 +7,23 @@ export type User = {
   avatar_url: string;
 };
 
-export function GithubUser() {
-  const [user, setUser] = useState<User | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+export function useGithubUser(username: string) {
+  const { data, isLoading, error, refetch } = useQuery({
+    queryKey: ["users", username],
+    queryFn: async () => {
+      if (!username) return null;
 
-  const fetchUser = async (username: string) => {
-    setLoading(true);
-    setError(null);
-    try {
-        const response = await fetch(`https://api.github.com/users/${username}`)
+      const response = await fetch(`https://api.github.com/users/${username}`);
 
-        if (!response.ok) {
-            throw new Error("Errore");
-        }
-        const json: User = await response.json()
-        setUser(json)
-    }
-    catch (error) {
-        setError(new Error)
-        setUser(null)
-    }
-    finally {
-        setLoading(false)
-    }
-  }
+      return response.json() as Promise<User>;
+    },
+    enabled: username !== null && username.trim() !== "",
+  });
+
   return {
-    user,
+    user: data,
     error,
-    loading,
-    fetchUser
+    isLoading,
+    fetchUserManually: refetch,
   } as const;
 }
