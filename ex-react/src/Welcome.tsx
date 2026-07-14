@@ -1,5 +1,6 @@
 import { Age } from "./Age";
 import { Message } from "./Message";
+import "./style/index.css";
 
 type WelcomeProps = {
   name: string;
@@ -8,7 +9,7 @@ type WelcomeProps = {
 
 export function Welcome({ name, age }: WelcomeProps) {
   return (
-    <div>
+    <div className="welcome">
       <p>Welcome, {name}!</p>
 
       {age > 18 && <Age age={age} />}

@@ -68,7 +68,13 @@ export function Login({ onLogin }: LoginProps) {
         Ricordami
       </label>
 
-      <button type="submit" disabled={!username || !password}>
+      <button
+        type="submit"
+        disabled={!username || !password}
+        style={{
+          backgroundColor: password.length >= 8 ? "green" : "red",
+        }}
+      >
         Login
       </button>
 

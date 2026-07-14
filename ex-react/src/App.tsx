@@ -9,6 +9,7 @@ import { Colors } from "./liste/Colors";
 import { TodoList } from "./listeEStato/TodoList";
 import { GithubUser } from "./fetch/GithubUser";
 import { GithubUsers } from "./fetch/GithubUsers";
+import { Clock } from "./useEffect/Clock";
 
 const programmatori = ["marcolink", "gaearon", "yyx990803"];
 const ColorsName = [{ name: "giallo", id: 1 }];
@@ -34,9 +35,16 @@ export function App() {
       <div>
         <TodoList />
       </div> */}
+      {/* <Clock />
       <div>
         <GithubUsers usernames={programmatori} />
       </div>
+      <Welcome name="Fede" age={25} />
+      <Counter incrementAmount={1} initialValue={0} />
+      <Login onLogin={InteractiveWelcome} />
+     */}
+     <UncontrolledLogin />
+     <FocusableInput />
     </StrictMode>
   );
 }

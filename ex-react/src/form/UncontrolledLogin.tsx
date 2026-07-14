@@ -11,15 +11,25 @@ export function UncontrolledLogin() {
   return (
     <form onSubmit={handleLogin}>
       <div>
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
+        <label className="font-extrabold text-blue-800" htmlFor="email">
+          Email
+        </label>
+        <input className="rounded-2xl border-2" type="email" name="email" />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" />
+        <label className="font-extrabold text-blue-800" htmlFor="password">
+          Password
+        </label>
+        <input
+          className="rounded-2xl border-2"
+          type="password"
+          name="password"
+        />
       </div>
 
-      <button type="submit">Login</button>
+      <button className="text-2xl text-emerald-700" type="submit">
+        Login
+      </button>
     </form>
   );
 }
