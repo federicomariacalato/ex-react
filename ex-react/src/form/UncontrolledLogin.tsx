@@ -14,7 +14,12 @@ export function UncontrolledLogin() {
         <label className="font-extrabold text-blue-800" htmlFor="email">
           Email
         </label>
-        <input className="rounded-2xl border-2" type="email" name="email" />
+        <input
+          className="rounded-2xl border-2"
+          type="email"
+          name="email"
+          id="email"
+        />
       </div>
       <div>
         <label className="font-extrabold text-blue-800" htmlFor="password">
@@ -24,6 +29,7 @@ export function UncontrolledLogin() {
           className="rounded-2xl border-2"
           type="password"
           name="password"
+          id="password"
         />
       </div>
 
